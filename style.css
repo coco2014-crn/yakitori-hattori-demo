@@ -25,3 +25,23 @@
 .hero-scene{transition:opacity 1.35s ease-in-out,filter 1.35s ease-in-out}.hero-scene img{transition:none;transform:none!important}.hero-scene-night,.js .hero-scene-night{animation:none!important;clip-path:none!important}.hero-line{transition:opacity .5s ease-in-out,transform .5s ease-in-out}.hero[data-scene=night] .hero-scene-day{opacity:0;filter:brightness(.76)}.hero[data-scene=night] .hero-scene-night{opacity:1;filter:none}.hero[data-scene=day] .hero-scene-day{opacity:1;filter:none}.hero[data-scene=day] .hero-scene-night{opacity:0;filter:saturate(.92)}
 .hero-interactive[data-scene=day] .hero-line-day{opacity:1!important;transform:none!important}.hero-interactive[data-scene=day] .hero-line-night{opacity:0!important;transform:translateY(6px)!important}.hero-interactive[data-scene=night] .hero-line-day{opacity:0!important;transform:translateY(-6px)!important}.hero-interactive[data-scene=night] .hero-line-night{opacity:1!important;transform:none!important}
 @media(prefers-reduced-motion:reduce){.hero-scene,.hero-line{transition:none!important}.hero[data-scene=day] .hero-scene-day{opacity:1}.hero[data-scene=day] .hero-scene-night{opacity:0}.hero[data-scene=night] .hero-scene-day{opacity:0}.hero[data-scene=night] .hero-scene-night{opacity:1}}
+/* Final HERO sync: keep copy and CTA out of the image crossfade interval. */
+.hero.is-scene-transitioning .hero-line{opacity:0!important;transform:translateY(0)!important}
+.hero.is-scene-transitioning .hero-actions{opacity:.72}
+@media(prefers-reduced-motion:reduce){.hero.is-scene-transitioning .hero-line{opacity:1!important}.hero.is-scene-transitioning .hero-actions{opacity:1}}
+
+/* Final readability pass: preserve the image while strengthening the copy hierarchy. */
+.hero-shade{background:radial-gradient(ellipse at center,rgba(20,14,10,.2),rgba(20,14,10,.58) 78%),linear-gradient(90deg,rgba(16,12,9,.2),rgba(16,12,9,.18))}
+.hero-copy{background:radial-gradient(ellipse at center,rgba(18,13,10,.58),rgba(18,13,10,.16) 68%,transparent 82%)}
+.scene-toggle:focus-visible,.button:focus-visible,.map-link:focus-visible,.contact-links a:focus-visible{outline:3px solid #e0a177;outline-offset:4px}
+.map-link,.contact-links a{min-height:52px;align-items:center}
+figcaption{line-height:1.6}
+@media(max-width:700px){
+  .intro h2,.information h2{font-size:clamp(1.95rem,8.4vw,2.2rem);line-height:1.45;letter-spacing:.03em}
+  .lead{font-size:1rem;line-height:1.9}
+  .muted,.info-caution{font-size:.72rem;line-height:1.9}
+  .section-heading h2{line-height:1.38;letter-spacing:.04em}
+  .section-heading>p:last-child{font-size:.92rem;line-height:1.9}
+  .info-card dd{font-size:.82rem;line-height:1.9;overflow-wrap:anywhere}
+  .hero-copy{background:linear-gradient(180deg,rgba(18,13,10,.62),rgba(18,13,10,.24) 72%,transparent)}
+}
